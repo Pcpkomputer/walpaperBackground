@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "walpaperBackground",
+    "slug": "walpaperBackground",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "walpaperBackground"
+}
