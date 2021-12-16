@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react';
-import { StyleSheet, Text, View, Dimensions,Image } from 'react-native';
+import { StyleSheet, Text, View, Dimensions,Image, Touchable } from 'react-native';
 
 import EStyleSheet from 'react-native-extended-stylesheet';
 
@@ -13,12 +13,12 @@ import { FlatList, TouchableOpacity } from 'react-native-gesture-handler';
 import { LinearGradient } from 'expo-linear-gradient';
 
 
-_renderItem = ({item, index}) => {
+_renderItem = ({item, index},props) => {
   return (
       <TouchableOpacity 
       activeOpacity={0.8}
       onPress={()=>{
-        alert("123");
+         props.navigation.navigate("DetailWalpaperPack",{item:item});
       }}
       style={{width:EStyleSheet.value("280rem"),height:"100%",overflow:"hidden",justifyContent:"center",alignItems:"center",borderRadius:EStyleSheet.value("10rem"),marginLeft:(index==0) ? EStyleSheet.value("20rem"):null,marginRight:EStyleSheet.value("20rem"),backgroundColor:"#c7c7c7",marginBottom:EStyleSheet.value("30rem")}}>
         <Image source={{uri:item.data[0].uri}} style={{position:"absolute",width:"100%",height:"100%"}}></Image>
@@ -32,7 +32,7 @@ _renderItem = ({item, index}) => {
 
 
 
-export default function HomeScreen() {
+export default function HomeScreen(props) {
 
   let [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -84,13 +84,23 @@ export default function HomeScreen() {
         <View style={{height:StatusBarHeight}}></View>
         <View style={{height:EStyleSheet.value("60rem"),justifyContent:"space-between",alignItems:"center",flexDirection:"row",paddingHorizontal:EStyleSheet.value("20rem"),paddingRight:EStyleSheet.value("15rem")}}>
             <Text style={{fontWeight:"bold",fontSize:EStyleSheet.value("17rem"),color:"white"}}>ABSTRACT</Text>
-            <View style={{flexDirection:"row"}}>
-                <View style={{paddingHorizontal:EStyleSheet.value("8rem")}}>
+            <View style={{flexDirection:"row",justifyContent:"center",alignItems:"center"}}>
+                <TouchableOpacity 
+                activeOpacity={0.8}
+                onPress={()=>{
+                  props.navigation.navigate("GetProVersion");
+                }}
+                style={{paddingHorizontal:EStyleSheet.value("8rem")}}>
                     <MaterialCommunityIcons name="crown" size={EStyleSheet.value("23rem")} color="white" />
-                </View>
-                <View style={{paddingHorizontal:EStyleSheet.value("8rem")}}>
+                </TouchableOpacity>
+                <TouchableOpacity 
+                activeOpacity={0.8}
+                onPress={()=>{
+                  props.navigation.navigate("ShareScreen");
+                }}
+                style={{paddingHorizontal:EStyleSheet.value("8rem")}}>
                   <Entypo name="share" size={EStyleSheet.value("20rem")} color="white" />
-                </View>
+                </TouchableOpacity>
                
             </View>
         </View>
@@ -107,7 +117,7 @@ export default function HomeScreen() {
             /> */}
             <FlatList
             horizontal={true}
-            renderItem={_renderItem}
+            renderItem={(payload)=>_renderItem(payload,props)}
             pagingEnabled={true}
             onMomentumScrollEnd={({nativeEvent})=>{
                 // the current offset, {x: number, y: number} 

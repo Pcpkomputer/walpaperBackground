@@ -15,6 +15,8 @@ import { LinearGradient } from 'expo-linear-gradient';
 import ImageLoader from '../components/ImageLoader';
 
 
+
+
 export default function PreviewWalpaper() {
 
   let [selectedIndex, setSelectedIndex] = useState(0);
@@ -30,7 +32,14 @@ export default function PreviewWalpaper() {
                 style={{position:"absolute",top:0,width:"100%"}}>
                     <View style={{height:StatusBarHeight}}></View>
                     <View style={{height:EStyleSheet.value("60rem"),alignItems:"center",flexDirection:"row",paddingHorizontal:EStyleSheet.value("20rem"),paddingRight:EStyleSheet.value("15rem")}}>
-                        <Ionicons name="arrow-back" size={24} color="white" />
+                    <TouchableOpacity
+            activeOpacity={0.8}
+            onPress={()=>{
+                props.navigation.goBack();
+            }}
+            >
+                 <Ionicons name="arrow-back" size={24} color="white" />
+            </TouchableOpacity>
                         <Text numberOfLines={1} style={{marginLeft:EStyleSheet.value("20rem"),color:"white",fontSize:EStyleSheet.value("18rem"),fontWeight:"bold"}}>New Tech - Anthony Early</Text>
                     </View>
                 </LinearGradient>
@@ -39,8 +48,11 @@ export default function PreviewWalpaper() {
                 style={{position:"absolute",bottom:0,width:"100%"}}>
                     <View style={{height:EStyleSheet.value("60rem"),alignItems:"center",justifyContent:"space-between",flexDirection:"row",paddingHorizontal:EStyleSheet.value("20rem"),paddingRight:EStyleSheet.value("15rem")}}>
                         <View style={{flexDirection:"row",flex:1}}>
-                            <Ionicons name="arrow-back" size={24} color="white" />
-                            <Text numberOfLines={1} style={{marginLeft:EStyleSheet.value("20rem"),color:"white",fontSize:EStyleSheet.value("18rem"),fontWeight:"bold"}}>Set Walpaper</Text>
+                            <TouchableOpacity style={{flexDirection:"row"}}>
+                                <Ionicons name="arrow-back" size={24} color="white" />
+                                <Text numberOfLines={1} style={{marginLeft:EStyleSheet.value("20rem"),color:"white",fontSize:EStyleSheet.value("18rem"),fontWeight:"bold"}}>Set Walpaper</Text>
+                       
+                            </TouchableOpacity>
                         </View>
                         <AntDesign style={{marginRight:EStyleSheet.value("10rem")}} name="heart" size={EStyleSheet.value("20rem")} color="white" />
                     </View>
