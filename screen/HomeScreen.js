@@ -12,6 +12,8 @@ import { FlatList, TouchableOpacity } from 'react-native-gesture-handler';
 
 import { LinearGradient } from 'expo-linear-gradient';
 
+import { get_templates_by_name} from '../utils/_template_utils';
+
 
 _renderItem = ({item, index},props) => {
   return (
@@ -74,6 +76,16 @@ export default function HomeScreen(props) {
       ]
     }
   ])
+
+  let fetchTemplates = async ()=>{
+     let request = await fetch("https://www.appdesignmaker.com/api/templates/lists/wallpapers");
+     let json = await request.text();
+     console.log(json);
+  }
+
+  useEffect(()=>{
+    fetchTemplates();
+  },[])
 
   return (
     <LinearGradient 
