@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, Dimensions, StatusBar } from 'react-native';
 
 import EStyleSheet from 'react-native-extended-stylesheet';
 
@@ -22,6 +22,7 @@ EStyleSheet.build({$rem: entireScreenWidth / 380});
 export default function App() {
   return (
     <NavigationContainer>
+    <StatusBar translucent backgroundColor="transparent" />
     <Stack.Navigator>
       <Stack.Screen 
       options={{

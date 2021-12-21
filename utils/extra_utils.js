@@ -1,4 +1,4 @@
-const endpoint = "https://www.appdesignmaker.com/api";
+export const endpoint = "https://www.appdesignmaker.com/api";
 
 function makeid(length) {
     var result           = '';

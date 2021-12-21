@@ -32,7 +32,7 @@ export default function DetailWalpaperPack(props) {
             >
                  <Ionicons name="arrow-back" size={24} color="black" />
             </TouchableOpacity>
-            <Text style={{fontSize:EStyleSheet.value("18rem"),fontWeight:"bold"}}>{props.route.params.item.category.toUpperCase()}</Text>
+            <Text style={{fontSize:EStyleSheet.value("18rem"),fontWeight:"bold"}}>{props.route.params.item.name.toUpperCase()}</Text>
             <TouchableOpacity
             activeOpacity={0.8}
             onPress={()=>{
@@ -43,26 +43,26 @@ export default function DetailWalpaperPack(props) {
             </TouchableOpacity>
         </View>
         <View style={{backgroundColor:"whitesmoke",overflow:"hidden",justifyContent:"center",height:EStyleSheet.value("100rem"),borderRadius:EStyleSheet.value("10rem")}}>
-            <ImageLoader resizeMode="cover"  style={{width:"100%",height:"100%",position:"absolute"}} source={{uri:"https://c4.wallpaperflare.com/wallpaper/108/140/869/digital-digital-art-artwork-fantasy-art-drawing-hd-wallpaper-preview.jpg"}}></ImageLoader>
+            <ImageLoader resizeMode="cover"  style={{width:"100%",height:"100%",position:"absolute"}} source={{uri:props.route.params.item.cover}}></ImageLoader>
             <View style={{position:"absolute",width:"100%",height:"100%",justifyContent:"center",alignItems:"center"}}>
-                <Text style={{position:"absolute",color:"white",fontSize:EStyleSheet.value("28rem")}}>{props.route.params.item.data.length} Walpaper</Text>
+                <Text style={{position:"absolute",color:"white",fontSize:EStyleSheet.value("28rem")}}>{props.route.params.item.items.length} Walpaper</Text>
             </View>
         </View>
         {/* <View style={{backgroundColor:"red",marginHorizontal:EStyleSheet.value("20rem")}}><Text>123</Text></View> */}
         <View style={{flex:1}}>
             <FlatList
-            data={props.route.params.item.data}
+            data={props.route.params.item.items}
             contentContainerStyle={{paddingHorizontal:EStyleSheet.value("20rem"),paddingTop:EStyleSheet.value("20rem")}}
             numColumns={2}
-            renderItem={()=>{
+            renderItem={({item,index})=>{
                 return (
                     <TouchableOpacity 
                     activeOpacity={0.8}
                     onPress={()=>{
-                        props.navigation.navigate("PreviewWalpaper");
+                        props.navigation.navigate("PreviewWalpaper",{image:item.image, item:item});
                     }}
                     style={{backgroundColor:"whitesmoke",overflow:"hidden",justifyContent:"center",alignItems:"center",borderRadius:EStyleSheet.value("10rem"),overflow:"hidden",marginBottom:EStyleSheet.value("15rem"),height:EStyleSheet.value("280rem"),width:EStyleSheet.value("162.5rem"),marginRight:EStyleSheet.value("15rem")}}>
-                        <ImageLoader style={{height:EStyleSheet.value("280rem"),width:EStyleSheet.value("162.5rem")}} source={{uri:"https://c4.wallpaperflare.com/wallpaper/108/140/869/digital-digital-art-artwork-fantasy-art-drawing-hd-wallpaper-preview.jpg"}}></ImageLoader>
+                        <ImageLoader style={{height:EStyleSheet.value("280rem"),width:EStyleSheet.value("162.5rem")}} source={{uri:item.image}}></ImageLoader>
                     </TouchableOpacity>
                 )
             }}

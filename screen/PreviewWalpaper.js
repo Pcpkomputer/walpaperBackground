@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react';
-import { StyleSheet, Text, View, Dimensions,Image,ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, Dimensions,Image,ImageBackground, ToastAndroid } from 'react-native';
 
 import EStyleSheet from 'react-native-extended-stylesheet';
 
@@ -14,18 +14,33 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 import ImageLoader from '../components/ImageLoader';
 
+import ManageWallpaper, { TYPE } from 'react-native-manage-wallpaper';
 
 
-
-export default function PreviewWalpaper() {
+export default function PreviewWalpaper(props) {
 
   let [selectedIndex, setSelectedIndex] = useState(0);
 
+  let _callback = res => {
+    console.log('Response: ', res);
+  };
+
+
+  let _setWallpaper =  (uri) => {
+    ManageWallpaper.setWallpaper(
+       {
+         uri: uri,
+       },
+       _callback,
+       TYPE.HOME,
+     );
+   };
+
   return (
-    <View
+    <View 
     style={{flex:1,backgroundColor:"whitesmoke"}}>
         <ImageBackground 
-        source={{uri:"https://c4.wallpaperflare.com/wallpaper/108/140/869/digital-digital-art-artwork-fantasy-art-drawing-hd-wallpaper-preview.jpg"}}
+        source={{uri:props.route.params.image}}
         style={{flex:1}}>
                 <LinearGradient 
                  colors={['black','rgba(0,0,0,0)']}
@@ -40,7 +55,7 @@ export default function PreviewWalpaper() {
             >
                  <Ionicons name="arrow-back" size={24} color="white" />
             </TouchableOpacity>
-                        <Text numberOfLines={1} style={{marginLeft:EStyleSheet.value("20rem"),color:"white",fontSize:EStyleSheet.value("18rem"),fontWeight:"bold"}}>New Tech - Anthony Early</Text>
+                        <Text numberOfLines={1} style={{marginLeft:EStyleSheet.value("20rem"),color:"white",fontSize:EStyleSheet.value("18rem"),fontWeight:"bold"}}>{props.route.params.item.title || ""}</Text>
                     </View>
                 </LinearGradient>
                 <LinearGradient 
@@ -48,7 +63,12 @@ export default function PreviewWalpaper() {
                 style={{position:"absolute",bottom:0,width:"100%"}}>
                     <View style={{height:EStyleSheet.value("60rem"),alignItems:"center",justifyContent:"space-between",flexDirection:"row",paddingHorizontal:EStyleSheet.value("20rem"),paddingRight:EStyleSheet.value("15rem")}}>
                         <View style={{flexDirection:"row",flex:1}}>
-                            <TouchableOpacity style={{flexDirection:"row"}}>
+                            <TouchableOpacity
+                            onPress={async ()=>{
+                               _setWallpaper(props.route.params.image);
+                               ToastAndroid.show("Success changed wallpapers!",500);
+                            }}
+                            style={{flexDirection:"row"}}>
                                 <Ionicons name="arrow-back" size={24} color="white" />
                                 <Text numberOfLines={1} style={{marginLeft:EStyleSheet.value("20rem"),color:"white",fontSize:EStyleSheet.value("18rem"),fontWeight:"bold"}}>Set Walpaper</Text>
                        

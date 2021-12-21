@@ -14,6 +14,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 import { get_templates_by_name} from '../utils/_template_utils';
 
+import {endpoint} from '../utils/extra_utils';
 
 _renderItem = ({item, index},props) => {
   return (
@@ -23,10 +24,10 @@ _renderItem = ({item, index},props) => {
          props.navigation.navigate("DetailWalpaperPack",{item:item});
       }}
       style={{width:EStyleSheet.value("280rem"),height:"100%",overflow:"hidden",justifyContent:"center",alignItems:"center",borderRadius:EStyleSheet.value("10rem"),marginLeft:(index==0) ? EStyleSheet.value("20rem"):null,marginRight:EStyleSheet.value("20rem"),backgroundColor:"#c7c7c7",marginBottom:EStyleSheet.value("30rem")}}>
-        <Image source={{uri:item.data[0].uri}} style={{position:"absolute",width:"100%",height:"100%"}}></Image>
+        <Image source={{uri:item.cover}} style={{position:"absolute",width:"100%",height:"100%"}}></Image>
         <Text style={{color:"white",fontSize:EStyleSheet.value("20rem"),paddingHorizontal:EStyleSheet.value("30rem"),textAlign:"center"}}>{item.name}</Text>
         <View style={{marginTop:EStyleSheet.value("15rem"),borderWidth:1.5,borderColor:"white",borderRadius:EStyleSheet.value("99rem"),paddingVertical:EStyleSheet.value("6rem"),paddingHorizontal:EStyleSheet.value("20rem")}}>
-          <Text style={{color:"white"}}>{item.data.length} Walpaper</Text>
+          <Text style={{color:"white"}}>{item.items.length} Walpaper</Text>
         </View>
       </TouchableOpacity>
   );
@@ -77,9 +78,14 @@ export default function HomeScreen(props) {
     }
   ])
 
+  let [data, setData] = useState({
+    categories:[]
+  });
+
   let fetchTemplates = async ()=>{
-     let request = await fetch("https://www.appdesignmaker.com/api/templates/lists/wallpapers");
-     let json = await request.text();
+     let request = await fetch(`${endpoint}/wallpapers/app/95289d3f-138e-468b-9493-683a76029c48`);
+     let json = await request.json();
+     setData(json);
      console.log(json);
   }
 
@@ -117,7 +123,7 @@ export default function HomeScreen(props) {
             </View>
         </View>
         <View style={{paddingHorizontal:EStyleSheet.value("20rem"),flexDirection:"row",alignItems:"center",paddingVertical:EStyleSheet.value("15rem"),paddingBottom:EStyleSheet.value("30rem")}}>
-          <Text style={{fontSize:EStyleSheet.value("40rem"),fontWeight:"bold",color:"white"}}>{imagePack[selectedIndex].category.toUpperCase()}</Text>
+          <Text style={{fontSize:EStyleSheet.value("40rem"),fontWeight:"bold",color:"white"}}>{data.categories[selectedIndex]?.name || ""}</Text>
         </View>
         <View style={{flex:1,marginBottom:EStyleSheet.value("35rem")}}>
             {/* <Carousel
@@ -139,7 +145,7 @@ export default function HomeScreen(props) {
                 setSelectedIndex(index);
 
             }}
-            data={imagePack}
+            data={data.categories}
             showsHorizontalScrollIndicator={false}
             // bounces={false}
             decelerationRate={0}

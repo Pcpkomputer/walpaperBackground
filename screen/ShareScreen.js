@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react';
-import { StyleSheet, Text, ScrollView, View, Dimensions,Image } from 'react-native';
+import { StyleSheet, Text, ScrollView, View, Dimensions,Image, Share } from 'react-native';
 
 import EStyleSheet from 'react-native-extended-stylesheet';
 
@@ -46,18 +46,39 @@ export default function GetProVersion(props) {
                 </View>
             </View>
             <View style={{paddingHorizontal:EStyleSheet.value("20rem"),flexDirection:"row"}}>
-                <View style={{flex:1,justifyContent:"center",alignItems:"center",paddingVertical:EStyleSheet.value("10rem")}}>
-                    <AntDesign name="instagram" size={EStyleSheet.value("32rem")} color="white" />
+                <View style={{flex:1}}>
+                    <TouchableOpacity activeOpacity={0.8} onPress={async ()=>{
+                        const result = await Share.share({
+                            message:
+                            'React Native | A framework for building native apps using React',
+                        });
+                    }} style={{flex:1,justifyContent:"center",alignItems:"center",paddingVertical:EStyleSheet.value("10rem")}}>
+                        <AntDesign name="instagram" size={EStyleSheet.value("32rem")} color="white" />
+                    </TouchableOpacity>
                 </View>
-                <View style={{flex:1,justifyContent:"center",alignItems:"center",paddingVertical:EStyleSheet.value("10rem")}}>
-                    <AntDesign name="twitter" size={EStyleSheet.value("32rem")} color="white" />
+                <View style={{flex:1}}>
+                    <TouchableOpacity activeOpacity={0.8} onPress={()=>{
+                        
+                    }} style={{flex:1,justifyContent:"center",alignItems:"center",paddingVertical:EStyleSheet.value("10rem")}}>
+                        <AntDesign name="twitter" size={EStyleSheet.value("32rem")} color="white" />
+                    </TouchableOpacity>
                 </View>
-                <View style={{flex:1,justifyContent:"center",alignItems:"center",paddingVertical:EStyleSheet.value("10rem")}}>
-                    <AntDesign name="facebook-square" size={EStyleSheet.value("32rem")} color="white" />
+                <View style={{flex:1}}>
+                    <TouchableOpacity activeOpacity={0.8} onPress={()=>{
+                        
+                    }} style={{flex:1,justifyContent:"center",alignItems:"center",paddingVertical:EStyleSheet.value("10rem")}}>
+                        <AntDesign name="facebook-square" size={EStyleSheet.value("32rem")} color="white" />
+                    </TouchableOpacity>
                 </View>
-                <View style={{flex:1,justifyContent:"center",alignItems:"center",paddingVertical:EStyleSheet.value("10rem")}}>
+                <View style={{flex:1}}>
+                <TouchableOpacity activeOpacity={0.8} onPress={()=>{
+                    
+                }} style={{flex:1,justifyContent:"center",alignItems:"center",paddingVertical:EStyleSheet.value("10rem")}}>
                 <FontAwesome5 name="facebook-messenger"  size={EStyleSheet.value("32rem")} color="white" />
+                </TouchableOpacity>
                 </View>
+                
+               
             </View>
             <View style={{justifyContent:"center",alignItems:"center",marginTop:EStyleSheet.value("25rem"),paddingVertical:EStyleSheet.value("30rem")}}>
                 <Text style={{color:"white"}}>Placeholder Iklan</Text>
