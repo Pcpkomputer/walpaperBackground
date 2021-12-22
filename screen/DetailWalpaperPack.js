@@ -14,14 +14,43 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 import ImageLoader from '../components/ImageLoader';
 
+import {
+    AdMobBanner,
+    AdMobInterstitial,
+    PublisherBanner,
+    AdMobRewarded,
+    setTestDeviceIDAsync,
+  } from 'expo-ads-admob';
+
 
 export default function DetailWalpaperPack(props) {
+
+    let showInterstitialAds = async ()=>{
+        await AdMobInterstitial.setAdUnitID('ca-app-pub-3940256099942544/1033173712'); 
+        await AdMobInterstitial.requestAdAsync({ servePersonalizedAds: true});
+        await AdMobInterstitial.showAdAsync();
+      }
+    
+      useEffect(()=>{
+        showInterstitialAds();
+      },[]);
 
   let [selectedIndex, setSelectedIndex] = useState(0);
 
   return (
     <View
     style={{flex:1,backgroundColor:"white"}}>
+
+        <View style={{position:"absolute",bottom:0,zIndex:999,width:"100%",backgroundColor:"whitesmoke",borderWidth:1,borderColor:"#e8e8e8",flexDirection:"row",justifyContent:"center",alignItems:"center"}}>
+           <View>
+                <AdMobBanner
+                    bannerSize="banner"
+                    adUnitID="ca-app-pub-3940256099942544/6300978111" // Test ID, Replace with your-admob-unit-id
+                    servePersonalizedAds // true or false
+                        />
+           </View>
+        </View>
+
         <View style={{height:StatusBarHeight}}></View>
         <View style={{height:EStyleSheet.value("60rem"),justifyContent:"space-between",alignItems:"center",flexDirection:"row",paddingHorizontal:EStyleSheet.value("20rem"),paddingRight:EStyleSheet.value("15rem")}}>
         <TouchableOpacity
@@ -42,7 +71,7 @@ export default function DetailWalpaperPack(props) {
                  <Ionicons name="share-social" size={24} color="black" />
             </TouchableOpacity>
         </View>
-        <View style={{backgroundColor:"whitesmoke",overflow:"hidden",justifyContent:"center",height:EStyleSheet.value("100rem"),borderRadius:EStyleSheet.value("10rem")}}>
+        <View style={{backgroundColor:"whitesmoke",overflow:"hidden",justifyContent:"center",height:EStyleSheet.value("100rem")}}>
             <ImageLoader resizeMode="cover"  style={{width:"100%",height:"100%",position:"absolute"}} source={{uri:props.route.params.item.cover}}></ImageLoader>
             <View style={{position:"absolute",width:"100%",height:"100%",justifyContent:"center",alignItems:"center"}}>
                 <Text style={{position:"absolute",color:"white",fontSize:EStyleSheet.value("28rem")}}>{props.route.params.item.items.length} Walpaper</Text>
@@ -52,7 +81,7 @@ export default function DetailWalpaperPack(props) {
         <View style={{flex:1}}>
             <FlatList
             data={props.route.params.item.items}
-            contentContainerStyle={{paddingHorizontal:EStyleSheet.value("20rem"),paddingTop:EStyleSheet.value("20rem")}}
+            contentContainerStyle={{paddingHorizontal:EStyleSheet.value("20rem"),paddingBottom:EStyleSheet.value("55rem"),paddingTop:EStyleSheet.value("20rem")}}
             numColumns={2}
             renderItem={({item,index})=>{
                 return (

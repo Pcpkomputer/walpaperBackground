@@ -16,8 +16,27 @@ import ImageLoader from '../components/ImageLoader';
 
 import ManageWallpaper, { TYPE } from 'react-native-manage-wallpaper';
 
+import {
+  AdMobBanner,
+  AdMobInterstitial,
+  PublisherBanner,
+  AdMobRewarded,
+  setTestDeviceIDAsync,
+} from 'expo-ads-admob';
+
+
 
 export default function PreviewWalpaper(props) {
+
+  let showInterstitialAds = async ()=>{
+    await AdMobInterstitial.setAdUnitID('ca-app-pub-3940256099942544/1033173712'); 
+    await AdMobInterstitial.requestAdAsync({ servePersonalizedAds: true});
+    await AdMobInterstitial.showAdAsync();
+  }
+
+  useEffect(()=>{
+    showInterstitialAds();
+  },[]);
 
   let [selectedIndex, setSelectedIndex] = useState(0);
 

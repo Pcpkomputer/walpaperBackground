@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react';
-import { StyleSheet, Text, ScrollView, View, Dimensions,Image } from 'react-native';
+import { StyleSheet, Text, ScrollView, View, Dimensions,Image, Touchable } from 'react-native';
 
 import EStyleSheet from 'react-native-extended-stylesheet';
 
@@ -77,9 +77,14 @@ export default function GetProVersion(props) {
                     <Text style={{color:"white",fontSize:EStyleSheet.value("10rem"),textAlign:"center"}}>Start Today</Text>
                     <Text style={{color:"white",fontWeight:"bold",fontSize:EStyleSheet.value("14rem")}}>Unlock Pro</Text>
                 </View>
-                <View style={{marginTop:EStyleSheet.value("20rem")}}>
+                <TouchableOpacity 
+                activeOpacity={0.8}
+                onPress={()=>{
+                    props.navigation.goBack();
+                }}
+                style={{marginTop:EStyleSheet.value("20rem")}}>
                     <Text style={{color:"white",fontSize:EStyleSheet.value("10rem")}}>Maybe Later</Text>
-                </View>
+                </TouchableOpacity>
             </View>
             
         </ScrollView>
