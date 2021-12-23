@@ -31,9 +31,9 @@ export default function DetailWalpaperPack(props) {
         await AdMobInterstitial.showAdAsync();
       }
     
-      useEffect(()=>{
-        showInterstitialAds();
-      },[]);
+    //   useEffect(()=>{
+    //     showInterstitialAds();
+    //   },[]);
 
   let [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -87,8 +87,9 @@ export default function DetailWalpaperPack(props) {
                 return (
                     <TouchableOpacity 
                     activeOpacity={0.8}
-                    onPress={()=>{
-                        props.navigation.navigate("PreviewWalpaper",{image:item.image, item:item});
+                    onPress={async ()=>{
+                        await showInterstitialAds();
+                        await props.navigation.navigate("PreviewWalpaper",{image:item.image, item:item});
                     }}
                     style={{backgroundColor:"whitesmoke",overflow:"hidden",justifyContent:"center",alignItems:"center",borderRadius:EStyleSheet.value("10rem"),overflow:"hidden",marginBottom:EStyleSheet.value("15rem"),height:EStyleSheet.value("280rem"),width:EStyleSheet.value("162.5rem"),marginRight:EStyleSheet.value("15rem")}}>
                         <ImageLoader style={{height:EStyleSheet.value("280rem"),width:EStyleSheet.value("162.5rem")}} source={{uri:item.image}}></ImageLoader>

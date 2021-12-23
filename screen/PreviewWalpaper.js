@@ -34,9 +34,9 @@ export default function PreviewWalpaper(props) {
     await AdMobInterstitial.showAdAsync();
   }
 
-  useEffect(()=>{
-    showInterstitialAds();
-  },[]);
+  // useEffect(()=>{
+  //   showInterstitialAds();
+  // },[]);
 
   let [selectedIndex, setSelectedIndex] = useState(0);
 
