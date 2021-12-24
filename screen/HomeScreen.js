@@ -103,14 +103,14 @@ export default function HomeScreen(props) {
         <View style={{height:EStyleSheet.value("60rem"),justifyContent:"space-between",alignItems:"center",flexDirection:"row",paddingHorizontal:EStyleSheet.value("20rem"),paddingRight:EStyleSheet.value("15rem")}}>
             <Text style={{fontWeight:"bold",fontSize:EStyleSheet.value("17rem"),color:"white"}}>ABSTRACT</Text>
             <View style={{flexDirection:"row",justifyContent:"center",alignItems:"center"}}>
-                <TouchableOpacity 
+                {/* <TouchableOpacity 
                 activeOpacity={0.8}
                 onPress={()=>{
                   props.navigation.navigate("GetProVersion");
                 }}
                 style={{paddingHorizontal:EStyleSheet.value("8rem")}}>
                     <MaterialCommunityIcons name="crown" size={EStyleSheet.value("23rem")} color="white" />
-                </TouchableOpacity>
+                </TouchableOpacity> */}
                 <TouchableOpacity 
                 activeOpacity={0.8}
                 onPress={()=>{
