@@ -50,7 +50,7 @@ export default function App() {
         <Image onLoad={()=>{
             setTimeout(() => {
                 setShowSplashScreen(false);
-            }, 500);
+            }, 1000);
         }} style={{width:"100%",height:"100%"}} source={{uri:splash}}></Image>
       </View>
     )
