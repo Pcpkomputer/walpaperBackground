@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from 'react';
+import React, {useState,useEffect, useContext} from 'react';
 import { StyleSheet, Text, View, Dimensions,Image, Touchable } from 'react-native';
 
 import EStyleSheet from 'react-native-extended-stylesheet';
@@ -15,6 +15,8 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { get_templates_by_name} from '../utils/_template_utils';
 
 import {endpoint} from '../utils/extra_utils';
+
+import {GlobalContext} from '../App';
 
 _renderItem = ({item, index},props) => {
   return (
@@ -36,6 +38,8 @@ _renderItem = ({item, index},props) => {
 
 
 export default function HomeScreen(props) {
+
+  let globalContext = useContext(GlobalContext);
 
   let [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -101,7 +105,7 @@ export default function HomeScreen(props) {
     style={{flex:1,backgroundColor:"whitesmoke"}}>
         <View style={{height:StatusBarHeight}}></View>
         <View style={{height:EStyleSheet.value("60rem"),justifyContent:"space-between",alignItems:"center",flexDirection:"row",paddingHorizontal:EStyleSheet.value("20rem"),paddingRight:EStyleSheet.value("15rem")}}>
-            <Text style={{fontWeight:"bold",fontSize:EStyleSheet.value("17rem"),color:"white"}}>ABSTRACT</Text>
+            <Text style={{fontWeight:"bold",fontSize:EStyleSheet.value("17rem"),color:"white"}}>{globalContext.appName.toUpperCase()}</Text>
             <View style={{flexDirection:"row",justifyContent:"center",alignItems:"center"}}>
                 {/* <TouchableOpacity 
                 activeOpacity={0.8}

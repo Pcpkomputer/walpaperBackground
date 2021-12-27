@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useContext, createContext} from 'react';
 import { StyleSheet, Text, View, Dimensions, StatusBar, Image } from 'react-native';
 
 import EStyleSheet from 'react-native-extended-stylesheet';
@@ -21,16 +21,21 @@ const Stack = createNativeStackNavigator();
 const entireScreenWidth = Dimensions.get('window').width;
 EStyleSheet.build({$rem: entireScreenWidth / 380});
 
+export let GlobalContext = createContext();
+
 export default function App() {
+
 
   let [initialFetchLoaded, setInitialFetchLoaded] = useState(false);
   let [showSplashScreen, setShowSplashScreen] = useState(false);
 
   let [splash, setSplash] = useState("");
+  let [appName,setAppName] = useState("");
 
   let fetchTemplates = async ()=>{
     let request = await fetch(`${endpoint}/wallpapers/app/95289d3f-138e-468b-9493-683a76029c48`);
     let json = await request.json();
+    setAppName(json.app_name);
     setSplash(json.image);
     setInitialFetchLoaded(true);
     setShowSplashScreen(true);
@@ -58,36 +63,40 @@ export default function App() {
 
 
   return (
-    <NavigationContainer>
-    <StatusBar translucent backgroundColor="transparent" />
-    <Stack.Navigator>
-      <Stack.Screen 
-      options={{
-        headerShown:false
-      }}
-      name="Home" component={HomeScreen} />
-        <Stack.Screen 
-      options={{
-        headerShown:false
-      }}
-      name="DetailWalpaperPack" component={DetailWalpaperPack} />
-        <Stack.Screen 
-      options={{
-        headerShown:false
-      }}
-      name="PreviewWalpaper" component={PreviewWalpaper} />
-        <Stack.Screen 
-      options={{
-        headerShown:false
-      }}
-      name="GetProVersion" component={GetProVersion} />
-           <Stack.Screen 
-      options={{
-        headerShown:false
-      }}
-      name="ShareScreen" component={ShareScreen} />
-    </Stack.Navigator>
-  </NavigationContainer>
+    <GlobalContext.Provider
+    value={{appName,setAppName}}
+    >
+        <NavigationContainer>
+        <StatusBar translucent backgroundColor="transparent" />
+        <Stack.Navigator>
+          <Stack.Screen 
+          options={{
+            headerShown:false
+          }}
+          name="Home" component={HomeScreen} />
+            <Stack.Screen 
+          options={{
+            headerShown:false
+          }}
+          name="DetailWalpaperPack" component={DetailWalpaperPack} />
+            <Stack.Screen 
+          options={{
+            headerShown:false
+          }}
+          name="PreviewWalpaper" component={PreviewWalpaper} />
+            <Stack.Screen 
+          options={{
+            headerShown:false
+          }}
+          name="GetProVersion" component={GetProVersion} />
+              <Stack.Screen 
+          options={{
+            headerShown:false
+          }}
+          name="ShareScreen" component={ShareScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+  </GlobalContext.Provider>
   );
 }
 
