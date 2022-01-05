@@ -132,7 +132,7 @@ android {
     }
 
     defaultConfig {
-        applicationId 'com.mediatechindo.walpaperbackground.3dbackgroundb'
+        applicationId 'com.mediatechindo.walpaperbackground.3dbackgrounda'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
