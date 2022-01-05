@@ -99,7 +99,7 @@ export default function HomeScreen(props) {
 
   return (
     <LinearGradient 
-    colors={['#09579e','#1c2f64','#90171f']}
+    colors={['#f9f9f9','#f9f9f9','#a09fa0']}
     start={{ x: 0, y: 1 }}
     end={{ x: 1, y: 0.2 }}
     style={{flex:1,backgroundColor:"whitesmoke"}}>
