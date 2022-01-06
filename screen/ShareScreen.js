@@ -30,7 +30,7 @@ export default function GetProVersion(props) {
 
   return (
     <View
-    style={{flex:1,backgroundColor:"#1f3047"}}>
+    style={{flex:1,backgroundColor:"#bdb7a8"}}>
         <View style={{height:StatusBarHeight}}></View>
         <View style={{height:EStyleSheet.value("60rem"),alignItems:"center",borderBottomWidth:0.2,borderColor:"white",flexDirection:"row",paddingHorizontal:EStyleSheet.value("20rem"),paddingRight:EStyleSheet.value("15rem")}}>
         <TouchableOpacity

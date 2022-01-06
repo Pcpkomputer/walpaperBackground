@@ -87,7 +87,7 @@ export default function HomeScreen(props) {
   });
 
   let fetchTemplates = async ()=>{
-     let request = await fetch(`${endpoint}/wallpapers/app/9538c2ba-a84c-4de7-9d61-fa3271b30e0a`);
+     let request = await fetch(`${endpoint}/wallpapers/app/953d1dd3-f412-46e5-9536-211dba9329f6`);
      let json = await request.json();
      setData(json);
      console.log(json);
@@ -99,7 +99,7 @@ export default function HomeScreen(props) {
 
   return (
     <LinearGradient 
-    colors={['#1f3047','#0f1c2c','#0f1c2c']}
+    colors={['#6d6c5e','#bdb7a8','#bdb7a8']}
     start={{ x: 0, y: 1 }}
     end={{ x: 1, y: 0.2 }}
     style={{flex:1,backgroundColor:"whitesmoke"}}>
