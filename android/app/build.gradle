@@ -132,7 +132,7 @@ android {
     }
 
     defaultConfig {
-        applicationId 'com.walpaperbackground.wall1'
+        applicationId 'com.walpaperbackground.space.galaxy.wallpaper.hd'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
