@@ -132,7 +132,7 @@ android {
     }
 
     defaultConfig {
-        applicationId 'com.wallpaperbackground.joker.wallpapers.hd.resolution4k'
+        applicationId 'com.wallpaperbackground.fnf.friday.night.wallpapers.hd'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
