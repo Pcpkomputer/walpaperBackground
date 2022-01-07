@@ -132,7 +132,7 @@ android {
     }
 
     defaultConfig {
-        applicationId 'com.wallpaperbackground.retrowave.wallpapers.hd.resolution4k'
+        applicationId 'com.wallpaperbackground.spider.wallpapers.man.hd.resolution4k'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
