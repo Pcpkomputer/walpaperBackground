@@ -132,7 +132,7 @@ android {
     }
 
     defaultConfig {
-        applicationId 'com.wallpaperbackground.fluid.full.wallpapers.hd'
+        applicationId 'com.wallpaperbackground.pubg.wallpapers.hd.resolution.4k'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
