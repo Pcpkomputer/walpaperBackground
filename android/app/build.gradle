@@ -132,7 +132,7 @@ android {
     }
 
     defaultConfig {
-        applicationId 'com.wallpaperbackground.anime.cartoon.wallpaper.hd'
+        applicationId 'com.wallpaperbackground.little.pony.unicorn.wallpaper'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
