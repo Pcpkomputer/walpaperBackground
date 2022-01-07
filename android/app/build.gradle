@@ -132,7 +132,7 @@ android {
     }
 
     defaultConfig {
-        applicationId 'com.walpaperbackground.we.bare.bears.wallpaper.hd'
+        applicationId 'com.wallpaperbackground.we.bare.bears.wallpaper.hd'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
