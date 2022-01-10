@@ -87,7 +87,7 @@ export default function HomeScreen(props) {
   });
 
   let fetchTemplates = async ()=>{
-     let request = await fetch(`${endpoint}/wallpapers/app/953a57be-bc0c-4bf8-b0ea-ce3fffbd5fda`);
+     let request = await fetch(`${endpoint}/wallpapers/app/953bf32d-631c-472d-8efc-655011f9be96`);
      let json = await request.json();
      setData(json);
      console.log(json);
