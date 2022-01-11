@@ -25,9 +25,12 @@ import {
 
 export default function DetailWalpaperPack(props) {
 
+
+
+
     let showInterstitialAds = async ()=>{
-        await AdMobInterstitial.setAdUnitID('ca-app-pub-3940256099942544/1033173712'); 
-        await AdMobInterstitial.requestAdAsync({ servePersonalizedAds: true});
+        await AdMobInterstitial.setAdUnitID('ca-app-pub-8993235418778327/3975493788'); 
+        await AdMobInterstitial.requestAdAsync({ servePersonalizedAds: false});
         await AdMobInterstitial.showAdAsync();
       }
     
@@ -45,7 +48,7 @@ export default function DetailWalpaperPack(props) {
            <View>
                 <AdMobBanner
                     bannerSize="banner"
-                    adUnitID="ca-app-pub-3940256099942544/6300978111" // Test ID, Replace with your-admob-unit-id
+                    adUnitID="ca-app-pub-8993235418778327/4654150635" // Test ID, Replace with your-admob-unit-id
                     servePersonalizedAds // true or false
                         />
            </View>
@@ -88,8 +91,13 @@ export default function DetailWalpaperPack(props) {
                     <TouchableOpacity 
                     activeOpacity={0.8}
                     onPress={async ()=>{
-                        await showInterstitialAds();
-                        await props.navigation.navigate("PreviewWalpaper",{image:item.image, item:item});
+                        try {
+                            await showInterstitialAds();
+                            await props.navigation.navigate("PreviewWalpaper",{image:item.image, item:item});
+                        } catch (error) {
+                            await props.navigation.navigate("PreviewWalpaper",{image:item.image, item:item});
+                        }
+                        
                     }}
                     style={{backgroundColor:"whitesmoke",overflow:"hidden",justifyContent:"center",alignItems:"center",borderRadius:EStyleSheet.value("10rem"),overflow:"hidden",marginBottom:EStyleSheet.value("15rem"),height:EStyleSheet.value("280rem"),width:EStyleSheet.value("162.5rem"),marginRight:EStyleSheet.value("15rem")}}>
                         <ImageLoader style={{height:EStyleSheet.value("280rem"),width:EStyleSheet.value("162.5rem")}} source={{uri:item.image}}></ImageLoader>
