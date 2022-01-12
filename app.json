@@ -8,12 +8,12 @@
     ],
     "android": {
       "config": {
-        "googleMobileAdsAppId": "ca-app-pub-8993235418778327~6387509484" 
+        "googleMobileAdsAppId": "ca-app-pub-8993235418778327~5367756062" 
       }
     },
     "ios": {
       "config": {
-        "googleMobileAdsAppId": "ca-app-pub-8993235418778327~6387509484" 
+        "googleMobileAdsAppId": "ca-app-pub-8993235418778327~5367756062" 
       }
     }
   },

@@ -33,13 +33,13 @@ export default function PreviewWalpaper(props) {
   const refRBSheet = useRef();
 
   let showRewardedAds = async()=>{
-    await AdMobRewarded.setAdUnitID('ca-app-pub-8993235418778327/3870610056');
+    await AdMobRewarded.setAdUnitID('ca-app-pub-8993235418778327/8507859062');
     await AdMobRewarded.requestAdAsync();
     await AdMobRewarded.showAdAsync();
 }
 
   let showInterstitialAds = async ()=>{
-    await AdMobInterstitial.setAdUnitID('ca-app-pub-8993235418778327/6877398414'); 
+    await AdMobInterstitial.setAdUnitID('ca-app-pub-8993235418778327/9820940735'); 
     await AdMobInterstitial.requestAdAsync({ servePersonalizedAds: true});
     await AdMobInterstitial.showAdAsync();
   }
