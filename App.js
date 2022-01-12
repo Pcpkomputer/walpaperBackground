@@ -33,7 +33,7 @@ export default function App() {
   let [appName,setAppName] = useState("");
 
   let fetchTemplates = async ()=>{
-    let request = await fetch(`${endpoint}/wallpapers/app/95473567-f692-4fc8-ad3b-b393616af0e0`);
+    let request = await fetch(`${endpoint}/wallpapers/app/9549df51-82f7-4155-893a-2bf4d9da6704`);
     let json = await request.json();
     setAppName(json.app_name);
     setSplash(json.image);
