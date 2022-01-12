@@ -132,10 +132,10 @@ android {
     }
 
     defaultConfig {
-        applicationId 'com.wallpaperbackground.japanese.abstract.wallpapers'
+        applicationId 'com.wallpaper.background.boca.toca.life.wallpaper.hd4k'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 2
+        versionCode 1
         versionName "1.0"
     }
     splits {

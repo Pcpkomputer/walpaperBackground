@@ -29,7 +29,7 @@ export default function DetailWalpaperPack(props) {
 
 
     let showInterstitialAds = async ()=>{
-        await AdMobInterstitial.setAdUnitID('ca-app-pub-8993235418778327/3567357728'); 
+        await AdMobInterstitial.setAdUnitID('ca-app-pub-3940256099942544/1033173712'); 
         await AdMobInterstitial.requestAdAsync({ servePersonalizedAds: false});
         await AdMobInterstitial.showAdAsync();
       }
@@ -48,7 +48,7 @@ export default function DetailWalpaperPack(props) {
            <View>
                 <AdMobBanner
                     bannerSize="banner"
-                    adUnitID="ca-app-pub-8993235418778327/4880439394" // Test ID, Replace with your-admob-unit-id
+                    adUnitID="ca-app-pub-3940256099942544/6300978111" // Test ID, Replace with your-admob-unit-id
                     servePersonalizedAds // true or false
                         />
            </View>

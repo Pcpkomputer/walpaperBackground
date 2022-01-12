@@ -101,7 +101,7 @@ export default function GetProVersion(props) {
             <View style={{justifyContent:"center",alignItems:"center",marginTop:EStyleSheet.value("25rem"),paddingVertical:EStyleSheet.value("30rem")}}>
             <AdMobBanner
                 bannerSize="banner"
-                adUnitID="ca-app-pub-8993235418778327/4880439394" // Test ID, Replace with your-admob-unit-id
+                adUnitID="ca-app-pub-3940256099942544/6300978111" // Test ID, Replace with your-admob-unit-id
                 servePersonalizedAds // true or false
                 />
             </View>
