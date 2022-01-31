@@ -132,7 +132,7 @@ android {
     }
 
     defaultConfig {
-        applicationId 'com.wallpaperbackground.japanese.abstract.wallpapers'
+        applicationId 'com.wallpaper.background.japanese.abstract.wallpapers'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 2
