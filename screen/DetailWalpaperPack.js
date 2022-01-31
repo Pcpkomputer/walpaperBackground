@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from 'react';
+import React, {useState,useEffect,useContext} from 'react';
 import { StyleSheet, Text, View, Dimensions,Image } from 'react-native';
 
 import EStyleSheet from 'react-native-extended-stylesheet';
@@ -22,14 +22,17 @@ import {
     setTestDeviceIDAsync,
   } from 'expo-ads-admob';
 
+  
+import { GlobalContext } from '../App';
+
 
 export default function DetailWalpaperPack(props) {
 
 
-
+    let globalContext = useContext(GlobalContext);
 
     let showInterstitialAds = async ()=>{
-        await AdMobInterstitial.setAdUnitID('ca-app-pub-8993235418778327/6877398414'); 
+        await AdMobInterstitial.setAdUnitID(globalContext.admob.google_interstitial_id); 
         await AdMobInterstitial.requestAdAsync({ servePersonalizedAds: false});
         await AdMobInterstitial.showAdAsync();
       }
@@ -48,8 +51,8 @@ export default function DetailWalpaperPack(props) {
            <View>
                 <AdMobBanner
                     bannerSize="banner"
-                    adUnitID="ca-app-pub-8993235418778327/7550000619" // Test ID, Replace with your-admob-unit-id
-                    servePersonalizedAds // true or false
+                    adUnitID={globalContext.admob.google_banner_id} // Test ID, Replace with your-admob-unit-id
+                    servePersonalizedAds={false} // true or false
                         />
            </View>
         </View>

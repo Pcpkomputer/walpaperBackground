@@ -90,7 +90,6 @@ export default function HomeScreen(props) {
      let request = await fetch(`${endpoint}/wallpapers/app/953a57be-bc0c-4bf8-b0ea-ce3fffbd5fda`);
      let json = await request.json();
      setData(json);
-     console.log(json);
   }
 
   useEffect(()=>{

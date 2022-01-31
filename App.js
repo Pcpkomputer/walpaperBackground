@@ -32,9 +32,26 @@ export default function App() {
   let [splash, setSplash] = useState("");
   let [appName,setAppName] = useState("");
 
+  let [admob, setAdMob] = useState({
+    google_app_id:"",
+    google_banner_id:"",
+    google_interstitial_id:"",
+    google_rewarded_id:""
+  })
+
   let fetchTemplates = async ()=>{
     let request = await fetch(`${endpoint}/wallpapers/app/953a57be-bc0c-4bf8-b0ea-ce3fffbd5fda`);
     let json = await request.json();
+
+    let {google_app_id,google_banner_id,google_interstitial_id,google_rewarded_id} = json;
+    
+    setAdMob({
+      google_app_id,
+      google_banner_id,
+      google_interstitial_id,
+      google_rewarded_id
+    });
+
     setAppName(json.app_name);
     setSplash(json.image);
     setInitialFetchLoaded(true);
@@ -64,7 +81,7 @@ export default function App() {
 
   return (
     <GlobalContext.Provider
-    value={{appName,setAppName}}
+    value={{appName,setAppName,admob,setAdMob}}
     >
         <NavigationContainer>
         <StatusBar translucent backgroundColor="transparent" />
