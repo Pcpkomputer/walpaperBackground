@@ -132,7 +132,7 @@ android {
     }
 
     defaultConfig {
-        applicationId 'com.wallpaperbackground.fnf.friday.night.wallpapers.hd'
+        applicationId 'com.wallpaper.background.fnf.friday.night.wallpapers.hd'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 2
