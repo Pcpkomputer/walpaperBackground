@@ -132,7 +132,7 @@ android {
     }
 
     defaultConfig {
-        applicationId 'com.wallpaperbackground.abstract.wallpapers4k'
+        applicationId 'com.wallpaper.background.cartoon.illustration.hd.wallpapers'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
