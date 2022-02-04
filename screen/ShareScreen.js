@@ -64,7 +64,7 @@ export default function GetProVersion(props) {
                     <TouchableOpacity activeOpacity={0.8} onPress={async ()=>{
                         const result = await Share.share({
                             message:
-                            'Free Wallpapers Background For Your Phone | https://play.google.com/store/apps/dev?id=7951255015540984549',
+                            'Free Wallpapers Background For Your Phone | https://play.google.com/store/apps/developer?id=Mediatechindo&hl=en&gl=US',
                         });
                     }} style={{flex:1,justifyContent:"center",alignItems:"center",paddingVertical:EStyleSheet.value("10rem")}}>
                         <AntDesign name="instagram" size={EStyleSheet.value("32rem")} color="white" />
@@ -74,7 +74,7 @@ export default function GetProVersion(props) {
                     <TouchableOpacity activeOpacity={0.8} onPress={async ()=>{
                             const result = await Share.share({
                                 message:
-                                'Free Wallpapers Background For Your Phone | https://play.google.com/store/apps/dev?id=7951255015540984549',
+                                'Free Wallpapers Background For Your Phone | https://play.google.com/store/apps/developer?id=Mediatechindo&hl=en&gl=US',
                             });
                     }} style={{flex:1,justifyContent:"center",alignItems:"center",paddingVertical:EStyleSheet.value("10rem")}}>
                         <AntDesign name="twitter" size={EStyleSheet.value("32rem")} color="white" />
@@ -84,7 +84,7 @@ export default function GetProVersion(props) {
                     <TouchableOpacity activeOpacity={0.8} onPress={async ()=>{
                             const result = await Share.share({
                                 message:
-                                'Free Wallpapers Background For Your Phone | https://play.google.com/store/apps/dev?id=7951255015540984549',
+                                'Free Wallpapers Background For Your Phone | https://play.google.com/store/apps/developer?id=Mediatechindo&hl=en&gl=US',
                             });
                     }} style={{flex:1,justifyContent:"center",alignItems:"center",paddingVertical:EStyleSheet.value("10rem")}}>
                         <AntDesign name="facebook-square" size={EStyleSheet.value("32rem")} color="white" />
@@ -94,7 +94,7 @@ export default function GetProVersion(props) {
                 <TouchableOpacity activeOpacity={0.8} onPress={async ()=>{
                         const result = await Share.share({
                             message:
-                            'Free Wallpapers Background For Your Phone | https://play.google.com/store/apps/dev?id=7951255015540984549',
+                            'Free Wallpapers Background For Your Phone | https://play.google.com/store/apps/developer?id=Mediatechindo&hl=en&gl=US',
                         });
                 }} style={{flex:1,justifyContent:"center",alignItems:"center",paddingVertical:EStyleSheet.value("10rem")}}>
                 <FontAwesome5 name="facebook-messenger"  size={EStyleSheet.value("32rem")} color="white" />
