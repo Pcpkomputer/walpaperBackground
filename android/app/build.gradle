@@ -132,7 +132,7 @@ android {
     }
 
     defaultConfig {
-        applicationId 'com.wallpaper.background.mobilelegends.mobile.wallpaper.legends.hd4k'
+        applicationId 'com.wallpaper.background.white.tiger.wallpaper.hd4k'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
