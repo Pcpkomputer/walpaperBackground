@@ -132,7 +132,7 @@ android {
     }
 
     defaultConfig {
-        applicationId 'com.wallpaper.background.paw.wallpaper.patrol.hd4k'
+        applicationId 'com.wallpaper.background.pawpatrol.paw.wallpaper.patrol.hd4k'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

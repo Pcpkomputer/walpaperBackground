@@ -1,4 +1,4 @@
-import React, {useState,useEffect, useRef} from 'react';
+import React, {useState,useEffect, useRef, useContext} from 'react';
 import { StyleSheet, Text, View, Dimensions,Image, Linking,ImageBackground, TouchableOpacity, ToastAndroid } from 'react-native';
 
 import EStyleSheet from 'react-native-extended-stylesheet';
@@ -26,20 +26,22 @@ import {
   setTestDeviceIDAsync,
 } from 'expo-ads-admob';
 
-
+import { GlobalContext } from '../App';
 
 export default function PreviewWalpaper(props) {
+
+  let globalContext = useContext(GlobalContext);
 
   const refRBSheet = useRef();
 
   let showRewardedAds = async()=>{
-    await AdMobRewarded.setAdUnitID('ca-app-pub-3940256099942544/5224354917');
+    await AdMobRewarded.setAdUnitID(globalContext.admob.google_rewarded_id);
     await AdMobRewarded.requestAdAsync();
     await AdMobRewarded.showAdAsync();
 }
 
   let showInterstitialAds = async ()=>{
-    await AdMobInterstitial.setAdUnitID('ca-app-pub-3940256099942544/1033173712'); 
+    await AdMobInterstitial.setAdUnitID(globalContext.admob.google_interstitial_id);
     await AdMobInterstitial.requestAdAsync({ servePersonalizedAds: true});
     await AdMobInterstitial.showAdAsync();
   }
