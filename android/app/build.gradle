@@ -132,7 +132,7 @@ android {
     }
 
     defaultConfig {
-        applicationId 'com.wallpaper.background.landscape.wallpapers.hd4k'
+        applicationId 'com.wallpaper.background.cat.wallpapers.hd4k.background'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
