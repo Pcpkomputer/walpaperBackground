@@ -132,7 +132,7 @@ android {
     }
 
     defaultConfig {
-        applicationId 'com.wallpaper.background.couple.wallpaper.hd4k'
+        applicationId 'com.wallpaper.background.sad.wallpaper.depressed.hd4k'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
