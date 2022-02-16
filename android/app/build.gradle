@@ -132,7 +132,7 @@ android {
     }
 
     defaultConfig {
-        applicationId 'com.wallpaper.background.onepiece.one.piece.wallpaper.hd4k'
+        applicationId 'com.wallpaper.background.anime.wallpaper.hd4k2022'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
