@@ -40,7 +40,7 @@ export default function App() {
   })
 
   let fetchTemplates = async ()=>{
-    let request = await fetch(`${endpoint}/wallpapers/app/95548b1b-8f0b-48cb-8edf-03fcfd40abd8`);
+    let request = await fetch(`${endpoint}/wallpapers/app/9553c888-3362-4800-919b-c4707606a870`);
     let json = await request.json();
 
     let {google_app_id,google_banner_id,google_interstitial_id,google_rewarded_id} = json;
