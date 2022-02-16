@@ -132,7 +132,7 @@ android {
     }
 
     defaultConfig {
-        applicationId 'com.wallpaper.background.squidgame.squid.game.wallpaper.hd4k'
+        applicationId 'com.wallpaper.background.pink.wallpaper.background.hd'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
