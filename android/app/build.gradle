@@ -132,7 +132,7 @@ android {
     }
 
     defaultConfig {
-        applicationId 'com.wallpaper.background.roses.flowers.wallpaper.hd4k'
+        applicationId 'com.wallpaper.background.beamng.drive.car.wallpaper.hd'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
