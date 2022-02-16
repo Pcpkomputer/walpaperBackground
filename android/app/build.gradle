@@ -132,7 +132,7 @@ android {
     }
 
     defaultConfig {
-        applicationId 'com.wallpaper.background.pink.wallpaper.background.hd'
+        applicationId 'com.wallpaper.background.roses.flowers.wallpaper.hd4k'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
